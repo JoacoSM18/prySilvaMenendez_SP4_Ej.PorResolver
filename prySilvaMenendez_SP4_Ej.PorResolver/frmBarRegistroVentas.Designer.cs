@@ -36,6 +36,7 @@
             this.colBebidaSAlcohol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBebidaCAlcohol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPostre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnValidarDatos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,11 +93,22 @@
             this.colPostre.HeaderText = "Postres";
             this.colPostre.Name = "colPostre";
             // 
+            // btnValidarDatos
+            // 
+            this.btnValidarDatos.Location = new System.Drawing.Point(377, 291);
+            this.btnValidarDatos.Name = "btnValidarDatos";
+            this.btnValidarDatos.Size = new System.Drawing.Size(93, 33);
+            this.btnValidarDatos.TabIndex = 1;
+            this.btnValidarDatos.Text = "Validar Datos";
+            this.btnValidarDatos.UseVisualStyleBackColor = true;
+            this.btnValidarDatos.Click += new System.EventHandler(this.btnValidarDatos_Click);
+            // 
             // frmBarVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(529, 461);
+            this.Controls.Add(this.btnValidarDatos);
             this.Controls.Add(this.dgvDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -117,6 +129,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colBebidaSAlcohol;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBebidaCAlcohol;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPostre;
+        private System.Windows.Forms.Button btnValidarDatos;
     }
 }
 

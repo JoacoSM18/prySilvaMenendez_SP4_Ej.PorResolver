@@ -17,6 +17,8 @@ namespace prySilvaMenendez_SP4_Ej.PorResolver
             InitializeComponent();
         }
 
+        float[,] matVentas = new float[5,4];
+
         private void frmBarVentas_Load(object sender, EventArgs e)
         {
             dgvDatos.Rows.Add("Julio");
@@ -24,6 +26,30 @@ namespace prySilvaMenendez_SP4_Ej.PorResolver
             dgvDatos.Rows.Add("Javier");
             dgvDatos.Rows.Add("Gonzalo");
             dgvDatos.Rows.Add("Alberto");
+        }
+
+        private void btnValidarDatos_Click(object sender, EventArgs e)
+        {
+            for (int indiceFilas = 0; indiceFilas < dgvDatos.Rows.Count; indiceFilas++)
+            {
+                for (int indiceColumnas = 1; indiceColumnas < dgvDatos.Columns.Count; indiceColumnas++)
+                {
+                    if (dgvDatos.Rows[indiceFilas].Cells[indiceColumnas].Value != null)
+                    {
+                        float contenidoCelda =
+                        float.Parse(dgvDatos.Rows[indiceFilas].Cells [indiceColumnas].Value.ToString());
+
+                        if (float.IsNaN(contenidoCelda))
+                        {
+                            dgvDatos.Rows[indiceFilas].Cells[indiceColumnas].Value = "Si";
+                        }
+                        else
+                        {
+                            dgvDatos.Rows[indiceFilas].Cells[indiceColumnas].Value = "No";
+                        }
+                    }
+                }
+            }
         }
     }
 }
