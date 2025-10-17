@@ -16,5 +16,14 @@ namespace prySilvaMenendez_SP4_Ej.PorResolver
         {
             InitializeComponent();
         }
+
+        private void frmBarVentas_Load(object sender, EventArgs e)
+        {
+            dgvDatos.Rows.Add("Julio");
+            dgvDatos.Rows.Add("Esteban");
+            dgvDatos.Rows.Add("Javier");
+            dgvDatos.Rows.Add("Gonzalo");
+            dgvDatos.Rows.Add("Alberto");
+        }
     }
 }
