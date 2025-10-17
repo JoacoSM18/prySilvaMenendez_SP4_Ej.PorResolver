@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBarVentas));
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.colMozos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colComidas = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,7 +83,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(627, 461);
             this.Controls.Add(this.dgvDatos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBarVentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bar La Milanga - Registro";
             this.Load += new System.EventHandler(this.frmBarVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
