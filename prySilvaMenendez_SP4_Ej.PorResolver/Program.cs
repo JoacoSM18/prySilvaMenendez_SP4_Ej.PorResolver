@@ -16,7 +16,7 @@ namespace prySilvaMenendez_SP4_Ej.PorResolver
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frmBarVentas());
         }
     }
 }

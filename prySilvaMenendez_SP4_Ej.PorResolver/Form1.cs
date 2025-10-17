@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace prySilvaMenendez_SP4_Ej.PorResolver
 {
-    public partial class Form1 : Form
+    public partial class frmBarVentas : Form
     {
-        public Form1()
+        public frmBarVentas()
         {
             InitializeComponent();
         }
