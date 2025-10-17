@@ -41,11 +41,11 @@ namespace prySilvaMenendez_SP4_Ej.PorResolver
 
                         if (float.IsNaN(contenidoCelda))
                         {
-                            dgvDatos.Rows[indiceFilas].Cells[indiceColumnas].Value = "Si";
+                            dgvDatos.Rows[indiceFilas].Cells[indiceColumnas].Value = "No";
                         }
                         else
                         {
-                            dgvDatos.Rows[indiceFilas].Cells[indiceColumnas].Value = "No";
+                            dgvDatos.Rows[indiceFilas].Cells[indiceColumnas].Value = "Si";
                         }
                     }
                 }
