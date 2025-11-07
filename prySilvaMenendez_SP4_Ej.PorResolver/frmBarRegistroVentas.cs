@@ -26,29 +26,41 @@ namespace prySilvaMenendez_SP4_Ej.PorResolver
             dgvDatos.Rows.Add("Javier");
             dgvDatos.Rows.Add("Gonzalo");
             dgvDatos.Rows.Add("Alberto");
+            dgvDatos [0,1].ReadOnly = true;
+            dgvDatos [0,2].ReadOnly = true;
+            dgvDatos [0,3].ReadOnly = true;
+            dgvDatos [0,4].ReadOnly = true;
+            dgvDatos [0,0].ReadOnly = true;
+            dgvDatos.Columns[0].DefaultCellStyle.BackColor = Color.Maroon;
+            dgvDatos.Columns[0].DefaultCellStyle.ForeColor = Color.White;
+            dgvDatos.CurrentCell = dgvDatos.Rows[0].Cells[1];
         }
 
         private void btnValidarDatos_Click(object sender, EventArgs e)
         {
-            for (int indiceFilas = 0; indiceFilas < dgvDatos.Rows.Count; indiceFilas++)
-            {
-                for (int indiceColumnas = 1; indiceColumnas < dgvDatos.Columns.Count; indiceColumnas++)
-                {
-                    if (dgvDatos.Rows[indiceFilas].Cells[indiceColumnas].Value != null)
-                    {
-                        float contenidoCelda =
-                        float.Parse(dgvDatos.Rows[indiceFilas].Cells [indiceColumnas].Value.ToString());
+            
+        }
 
-                        if (float.IsNaN(contenidoCelda))
-                        {
-                            dgvDatos.Rows[indiceFilas].Cells[indiceColumnas].Value = "No";
-                        }
-                        else
-                        {
-                            dgvDatos.Rows[indiceFilas].Cells[indiceColumnas].Value = "Si";
-                        }
-                    }
-                }
+        private void dgvDatos_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                return;
+            }   
+            if (string.IsNullOrWhiteSpace(e.FormattedValue.ToString()))
+            {
+                return;
+            }
+
+            if (!double.TryParse(e.FormattedValue.ToString(), out _))
+            {
+                MessageBox.Show(
+                    $"Solo se Permiten Valores Numéricos.\nError en la Celda ({e.RowIndex + 1}, {e.ColumnIndex}).",
+                    "Error de Validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                e.Cancel = true;
             }
         }
     }
